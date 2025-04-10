@@ -1,6 +1,7 @@
 # Jasper's Legal-Assistant
-Completed as my Capstone project for the 5 day intensive Google/Kaggle GenAI for Developers course in Q1 2025
-An AI-powered tool designed to assist legal professionals in Kenya with case summarization, legal research, and document drafting. This project is a capstone from Google and Kaggle's 5-day GenAI course for developers, leveraging advanced AI technologies to support Kenyan legal practice.
+Completed as my Capstone project for the 5 day intensive Google/Kaggle GenAI for Developers course in Q1 2025.
+
+This is an AI-powered tool designed to assist legal professionals in Kenya with case summarization, legal research, and document drafting. This project is a capstone from Google and Kaggle's 5-day GenAI course for developers, leveraging advanced AI technologies to support Kenyan legal practice.
 
 ## Features
 
