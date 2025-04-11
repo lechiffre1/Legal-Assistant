@@ -1,130 +1,191 @@
-# Jasper's Legal-Assistant
-Completed as my Capstone project for the 5 day intensive Google/Kaggle GenAI for Developers course in Q1 2025.
+# Legal Assistant for Kenyan and German Lawyers 🇰🇪🇩🇪⚖️
 
-This is an AI-powered tool designed to assist legal professionals in Kenya with case summarization, legal research, and document drafting. This project is a capstone from Google and Kaggle's 5-day GenAI course for developers, leveraging advanced AI technologies to support Kenyan legal practice.
+**A Gemini-Powered Toolkit for Legal Research, Summarization, and Drafting Across Jurisdictions**
 
-## Features
+This AI-driven legal assistant empowers professionals in **Kenya** and **Germany** to research case law, generate summaries, and draft documents. Built as a capstone for the **Google & Kaggle 5-Day Generative AI Course in Q1 2025**, it bridges common law and civil law systems with advanced AI.
 
--   **Legal Research**: Search Kenyan case law and statutes using vector embeddings and Google Search integration.
--   **Case Summarization**: Generate brief or comprehensive summaries, extracting key facts, holdings, and citations.
--   **Document Generation**: Create formatted legal documents like petitions, memos, and affidavits based on user inputs.
--   **Interactive Interface**: Access all features through a Gradio-based web interface.
+----------
 
-## Technologies Used
+## ✨ Features
 
--   **Google's Gemini Pro**: Powers natural language generation and analysis.
--   **Vector Embeddings**: Custom SimpleVectorStore for semantic search of legal documents.
--   **LangChain**: Manages AI orchestration and document handling.
--   **LangGraph**: Enables agent-based workflows for complex tasks.
--   **RAG (Retrieval-Augmented Generation)**: Ensures grounded, context-aware responses.
--   **Gradio**: Provides an interactive UI for user interaction.
+-   **Multilingual Legal Research**: Search and analyze Kenyan and German case law using vector embeddings and optional Google Search grounding.
+-   **Case Summarization**: Generate structured summaries (brief or comprehensive) for cases in both jurisdictions.
+-   **Document Generation**: Create professionally formatted legal documents following Kenyan or German conventions.
+-   **Comparative Analysis**: Research and compare legal concepts across the two systems (e.g., contract law in BGB vs. Kenyan statutes).
 
-## Setup Instructions
+----------
 
-Follow these steps to set up and run Jasper's Kenyan Legal Assistant locally:
+## 🏗️ Technologies Used
 
-1.  **Clone the Repository**
-    
-    bash
-    
-    CollapseWrapCopy
-    
-    `git clone https://github.com/lechiffre1/Legal-Assistant.git cd Legal-Assistant`
-    
-2.  **Install Dependencies**  
-    Ensure Python 3.8+ is installed, then install required packages:
-    
-    bash
-    
-    CollapseWrapCopy
-    
-    `pip install google-generativeai langchain gradio numpy python-dotenv`
-    
-    _Note_: The repository doesn’t include a requirements.txt, so these are derived from typical imports in the notebook.
-3.  **Set Environment Variables**  
-    Obtain a Google API key and Custom Search Engine ID from [Google's Developer Console](https://developers.google.com/api-client-library/python/auth/web-app). Create a .env file in the root directory or set them in your terminal:
-    
-    bash
-    
-    CollapseWrapCopy
-    
-    `export GOOGLE_API_KEY='your-api-key'  export GOOGLE_CSE_ID='your-cse-id'`
-    
-    _Note_: On Windows, use set instead of export.
-4.  **Run the Jupyter Notebook**  
-    Launch the notebook to initialize the vector store and models:
-    
-    bash
-    
-    CollapseWrapCopy
-    
-    `jupyter notebook main/Kenyan_Legal_Assistant.ipynb`
-    
-    Execute all cells to load sample documents and configure the assistant.
-5.  **Launch the Gradio Interface**  
-    The final cell in the notebook starts the Gradio UI. Access it in your browser at the provided URL (e.g., http://127.0.0.1:7860).
+-   **Google Gemini 2.5 Pro**: Powers natural language generation and analysis.
+-   **Vector Embeddings**: Custom SimpleVectorStore for semantic search across jurisdictions.
+-   **LangChain**: Orchestrates AI workflows and document management.
+-   **LangGraph**: Enables agent-based task handling.
+-   **RAG (Retrieval-Augmented Generation)**: Ensures grounded, jurisdiction-specific responses.
+-   **Gradio**: Delivers an interactive, multilingual UI.
 
-## Usage
+----------
 
-The Gradio interface provides three main tabs:
+## 🚀 Quick Start
 
--   **Legal Research**: Enter queries like "What are the requirements for proving robbery with violence in Kenya?" to get detailed responses with case law references.
--   **Case Analysis**: Upload case text or provide a citation (e.g., from sample documents) and select "Brief" or "Comprehensive" for summaries.
--   **Document Generation**: Input client details and select a document type (e.g., petition, memo) to generate a formatted draft.
+### 1. Clone the Repository
 
-### Example Queries
+bash
 
-Query Type
+CollapseWrapCopy
 
-Example Query
+`git clone https://github.com/lechiffre1/Legal-Assistant.git cd Legal-Assistant`
+
+### 2. Install Dependencies
+
+Ensure Python 3.8+ is installed, then run:
+
+bash
+
+CollapseWrapCopy
+
+`pip install google-generativeai langchain gradio numpy python-dotenv`
+
+_Note_: Core packages; expand as needed for German data integration.
+
+### 3. Set API Credentials
+
+Obtain a [Google Gemini API key](https://developers.google.com/api-client-library/python/auth/web-app) and optional [Google Custom Search Engine ID](https://programmablesearchengine.google.com/). Set them:
+
+bash
+
+CollapseWrapCopy
+
+`export GOOGLE_API_KEY='your-gemini-api-key'  export GOOGLE_CSE_ID='your-search-id'  # Optional for live search`
+
+_On Windows, use set instead of export._
+
+### 4. Run the Notebook
+
+Launch and execute all cells:
+
+bash
+
+CollapseWrapCopy
+
+`jupyter notebook main/Kenyan_Legal_Assistant.ipynb`
+
+Builds sample vector stores for both jurisdictions and starts the Gradio UI.
+
+### 5. Access the Gradio UI
+
+Visit the provided URL (e.g., http://127.0.0.1:7860) to select a jurisdiction and use the features.
+
+----------
+
+## 🎯 Usage
+
+Select **Kenya** or **Germany** in the Gradio interface, then choose a feature:
+
+Feature
+
+Example Query/Input
 
 Expected Output
 
 Legal Research
 
-What are the requirements for proving robbery with violence in Kenya?
+"Requirements for robbery in Kenya" or "§ 249 StGB Raub"
 
-Detailed explanation with case law and statutes.
+Jurisdiction-specific legal explanation.
 
-Case Analysis
+Case Summarization
 
-Text of "Case_1_Constitutional_Law.txt", Comprehensive
+Text of Case_1_Constitutional_Law.txt or a BGH ruling
 
-Structured summary with citation, facts, holding, etc.
+Structured summary with facts, holding, citation.
 
 Document Generation
 
-Petition for land ownership dispute, client details provided
+Petition for land dispute (Kenya) or Kündigung (Germany)
 
-Formatted petition document ready for filing.
+Formatted document per local standards.
 
-## Project Structure
+Comparative Analysis
 
-The repository is organized as follows:
+"Contract validity in Kenya vs. Germany"
 
--   **main/Kenyan_Legal_Assistant.ipynb**: Core notebook with setup, logic, and Gradio UI implementation.
--   **main/sample_documents/**: Contains sample Kenyan legal documents (e.g., Case_1_Constitutional_Law.txt, Case_2_Criminal_Law.txt, Case_3_Land_Law.txt).
--   **main/example_usage.txt**: Likely contains sample queries or outputs (contents not specified).
+Side-by-side comparison of legal principles.
+
+-   **Legal Research**: Ask jurisdiction-specific questions.
+-   **Case Analysis**: Analyze cases with adjustable detail levels.
+-   **Document Generation**: Draft documents tailored to each system.
+-   **Comparative Analysis**: Compare legal topics across Kenya and Germany.
+
+----------
+
+## 🗃️ Project Structure
+
+-   **main/Kenyan_Legal_Assistant.ipynb**: Core notebook with setup, logic, and UI (adaptable for Germany).
+-   **main/sample_documents/**: Sample Kenyan cases (e.g., Case_1_Constitutional_Law.txt); add German equivalents.
+-   **main/example_usage.txt**: Sample queries or outputs.
 -   **README.md**: This file.
 
-The notebook itself is structured into sections such as:
+Notebook sections include:
 
--   Setup and API key configuration.
--   Initialization of the Gemini client and vector store.
--   Creation and embedding of sample documents.
--   Definition of search, grounding, and assistant functions.
--   Gradio UI setup and demonstration.
+-   Setup and API configuration.
+-   Vector store creation for both jurisdictions.
+-   Jurisdiction-specific functions (search, analysis, drafting).
+-   Gradio UI with jurisdiction selector.
 
-## Data Sources
+----------
 
-The system uses sample Kenyan case law documents (provided in main/sample_documents/) focused on constitutional, criminal, and land law cases. These are for demonstration purposes. For production use, integrate with official sources like [Kenya Law Reports](http://kenyalaw.org).
+## 🖥️ Demo Screenshot
 
-## License
+![Gradio UI](https://github.com/lechiffre1/Legal-Assistant/blob/main/demo_screenshot.png)  
+_Tabs for Kenyan and German legal tasks, plus comparative analysis._
 
-This project is for **educational purposes only** as part of a capstone project. It is not intended for production use without further development and validation.
+----------
 
-## Further Reading
+## 📚 Data Sources
 
--   [Google API Key Documentation](https://developers.google.com/api-client-library/python/auth/web-app)
--   [Gradio Installation Guide](https://gradio.app/docs/installation)
--   [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction)
+-   **Kenya**: Sample cases in main/sample_documents/; extend with [Kenya Law Reports](http://kenyalaw.org).
+-   **Germany**:
+    -   [Open Legal Data API](https://de.openlegaldata.io) for free case law (API key required).
+    -   [Gesetze-im-Internet.de](https://www.gesetze-im-internet.de) for statutes (scrape or download).
+    -   Optional: [Rechtsprechung-im-Internet.de](https://www.rechtsprechung-im-internet.de) for federal rulings.
+
+----------
+
+## ⚙️ Implementation Highlights
+
+-   **Multilingual RAG**: Combines Kenyan and German vector stores with optional Google Search.
+-   **Function Calling**: Gemini invokes jurisdiction-aware functions (e.g., analyze_case_law_de).
+-   **Sample Data**: Kenyan cases included; German data to be added (e.g., BGB, BGH rulings).
+-   **UI**: Gradio tabs with a jurisdiction dropdown.
+
+----------
+
+## 🚦 Limitations & Next Steps
+
+-   **Sample Data**: Limited to Kenyan samples; German data requires integration.
+-   **Verification**: Outputs need legal review per jurisdiction.
+-   **Future Plans**: Add Swahili and German language support, connect to official APIs, refine comparative analysis.
+
+----------
+
+## 🏆 Author
+
+**Jasper Michieka**
+
+-   LinkedIn: [jasper-michieka](https://www.linkedin.com/in/jasper-michieka/)
+-   Email: [jasper.michieka@mail.com](mailto:jasper.michieka@mail.com)
+
+Developed for Google & Kaggle’s 5-Day GenAI Bootcamp, Q1 2025.
+
+----------
+
+## 🤝 License
+
+MIT License. For **educational purposes only** as a capstone project. No warranty. **Not official legal advice.**
+
+----------
+
+## 🇰🇪🇩🇪 Bridging Legal Systems with AI
+
+Empowering lawyers in Kenya and Germany—questions? Reach out above!
