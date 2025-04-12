@@ -113,8 +113,6 @@ Extracted clauses with page references and analysis
 
 Jasper Michieka
 
--   LinkedIn: jasper-michieka
-
 Developed for Google & Kaggle's 5-Day GenAI Workshop, Q1 2025.
 
 ## 🤝 License
